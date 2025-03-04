@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('Hello, AWS CI/CD with PM2!');
+    res.send('Node.js App running with PM2!');
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
 
