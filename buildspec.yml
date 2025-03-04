@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install
+  build:
+    commands:
+      - echo "Build completed"
+  post_build:
+    commands:
+      - echo "Deploying to S3"
+      - aws s3 cp ./ s3://your-unique-bucket-name --recursive
+artifacts:
+  files:
+    - '**/*'
+
